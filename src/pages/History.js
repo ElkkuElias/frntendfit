@@ -10,7 +10,7 @@ import { REACT_APP_API_URL } from '../utils/apiConfig';
 import "./History.css"
 import './star.jpg'
 
-const apiUrl = `${REACT_APP_API_URL}/api/workouts`;
+const apiUrl = `https://fitnessappserver.onrender.com/api/workouts`;
 
 const History = () => {
   const { workouts, dispatch } = useWorkoutsContext()
