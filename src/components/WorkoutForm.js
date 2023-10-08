@@ -5,7 +5,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from '../hooks/useAuthContext';
 import { REACT_APP_API_URL } from '../utils/apiConfig';
 
-const apiUrl = `${REACT_APP_API_URL}/api/workouts`;
+const apiUrl = `https://fitnessappserver.onrender.com/api/workouts`;
 
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext()
