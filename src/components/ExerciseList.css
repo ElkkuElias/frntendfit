@@ -1,0 +1,44 @@
+.exercise-list {
+  height: 100vh;
+  overflow-y: auto;
+  width: 600px;
+  position: fixed;
+  right: 300px;
+  top: 0;
+  padding: 20px;
+  background-color: #ffffff;
+}
+button {
+  margin-left: 35%;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Concert One", cursive;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.giffi {
+  margin-left: 15%;
+}
+
+button:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.exercise-card {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.exercise-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.exercise-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}

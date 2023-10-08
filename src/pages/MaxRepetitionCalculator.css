@@ -1,0 +1,57 @@
+#measure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 69vh;
+    flex-direction: column;
+    text-align: center;
+    background-color: #f0f0f0; 
+}
+  
+#measure h2 {
+    margin-bottom: 20px;
+}
+  
+#measure p {
+    margin-bottom: 20px;
+}
+  
+#measure .unit-option {
+    display: inline-block;
+    margin-right: 10px;
+}
+  
+#measure label {
+    font-weight: bold;
+}
+  
+#measure input[type="number"] {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    margin-left: 45%;
+    width: 10%;
+}
+  
+#measure input[type="radio"] {
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+}
+  
+#measure button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+#measure button:hover {
+    background-color: #0056b3;
+}
+  
+  
+

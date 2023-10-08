@@ -1,0 +1,110 @@
+.photo {
+  height: 120%;
+  width: 95%;
+  position: absolute;
+  top: 0%;
+  left: 2%;
+  background-image: url("../ha.jpeg");
+  background-size: 110%;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.foreground {
+  color: rgb(0, 0, 0);
+  text-align: start;
+  position: absolute;
+  top: 50%;
+  left: 24%;
+  transform: translate(-50%, -50%);
+}
+h1 {
+  padding: 0%;
+  margin: 0;
+  line-height: 1;
+}
+.First_Text {
+  font-family: "Concert One", cursive;
+  font-size: 600%;
+  font-weight: bolder;
+}
+.First_Text {
+  font-family: "Concert One", cursive;
+  font-size: 600%;
+  font-weight: bolder;
+}
+
+.second {
+  font-family: "Concert One", cursive;
+  font-size: 200%;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-align: start;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.third {
+  font-family: "Concert One", cursive;
+  font-size: 200%;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-align: start;
+  position: absolute;
+  top: 123%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.fourth {
+  font-family: "Concert One", cursive;
+  font-size: 200%;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-align: start;
+  position: absolute;
+  top: 126%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Concert One", cursive;
+  border-radius: 5px;
+  font-size: 16px;
+  position: absolute;
+  top: 140%;
+  left: 37.7%;
+}
+
+.button:hover {
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.links:link .links:visited,
+.links:active,
+.links {
+  color: #000000;
+  text-decoration: none;
+}
+.button2 {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Concert One", cursive;
+  border-radius: 5px;
+  font-size: 16px;
+  position: absolute;
+  top: 140%;
+  left: 57.7%;
+}
+
+.button2:hover {
+  background-color: #ffffff;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.blank {
+  top: 170%;
+  color: #fff;
+}
