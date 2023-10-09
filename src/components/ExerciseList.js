@@ -7,13 +7,30 @@ const ExerciseList = ({ data }) => {
 
   const addExerciseToFavorites = (newExercise) => {
     let favorites = JSON.parse(sessionStorage.getItem('favoriteExercises')) || [];
-    favorites.push(newExercise);
-    sessionStorage.setItem('favoriteExercises', JSON.stringify(favorites));
-  };
+    console.log(favorites + "favourites");
+    console.log(newExercise.name);
+    // Check if the newExercise already exists in favorites
+    const existsInFavorites = favorites.some((exercise) =>
+      exercise.name === newExercise.name);
+
+    if (existsInFavorites) {
+      console.log('Exercise is already in favorites');
+    } else {
+      favorites.push(newExercise);
+      sessionStorage.setItem('favoriteExercises', JSON.stringify(favorites));
+    }
+
+  }
+
+
+
+
 
   const handleGifNameClick = (e, exercise) => {
-    const id = e.currentTarget.parentNode.id; 
+    const id = e.currentTarget.parentNode.id;
     console.log(id);
+    console.log(exercise.name);
+    console.log(exercise.gifUrl);
     setSelectedId(id);
     addExerciseToFavorites({
       name: exercise.name,
@@ -25,7 +42,7 @@ const ExerciseList = ({ data }) => {
     <div className="exercise-list">
       {data.map((exercise, index) => (
         <div key={index} id={index} className="exercise-card">
-          <h2>{exercise.name}</h2>  
+          <h2>{exercise.name}</h2>
           <img className='giffi' src={exercise.gifUrl} alt={`${exercise.name} gif`} />
           <div className='plusbutton' onClick={(e) => handleGifNameClick(e, exercise)}>
             <button>Add to Favorites</button>
