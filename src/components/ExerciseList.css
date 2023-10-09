@@ -11,25 +11,25 @@
 button {
   margin-left: 35%;
   background-color: #ffffff;
-  color: #000000;
+  color: #2b2b2b;
+  cursor: pointer;
   font-family: "Concert One", cursive;
   border-radius: 5px;
+  border-color: #EDEDED;
   font-size: 16px;
-  box-shadow: 0 3px #999;
+  box-shadow: 0 3px #D2D2D2;
 }
 .giffi {
   margin-left: 15%;
 }
 
 button:hover {
-  /* background-color: #ffffff; */
-  cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(3px) ease-in-out;
+  box-shadow: 0 5px #d2d2d2;
+  transform: translateY(3px);
 }
 
 .exercise-card {
