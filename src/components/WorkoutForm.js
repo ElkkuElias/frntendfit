@@ -92,7 +92,7 @@ const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
           type="button" 
           onClick={() => setAreFavoritesVisible(!areFavoritesVisible)}
         >
-          {areFavoritesVisible ? "Hide" : "Show"} Favorites
+          {areFavoritesVisible ? "Hide" : "See"} Favorites
         </button>
       </div>
     </form>
