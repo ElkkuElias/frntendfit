@@ -3,8 +3,10 @@
 
 /* layout */
 :root {
-  --primary: #1aac83;
+  --primary: #ed380b;
   --error: #e7195a;
+  --workout-title: #3b7ae7;
+  --ex-list-headers: #FF6347;
 }
 body {
   background: #ffffff;
@@ -49,7 +51,7 @@ header a {
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
-  color: var(--primary);
+  color: var(--workout-title);
 }
 .workout-details p {
   margin: 0;

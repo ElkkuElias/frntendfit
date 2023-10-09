@@ -47,14 +47,15 @@ const ExerciseList = ({ data }) => {
           <div className='plusbutton' onClick={(e) => handleGifNameClick(e, exercise)}>
             <button>Add to Favorites</button>
           </div>
-          <p><strong>Target: </strong>{exercise.target}</p>
-          <p><strong>Equipment: </strong>{exercise.equipment}</p>
-          <p><strong>Instructions:</strong></p>
+          <p className="exercise-card"><span className="exercise-header"><strong>Target: </strong></span>{exercise.target}</p>
+          <p className="exercise-card"><span className="exercise-header"><strong>Equipment: </strong></span>{exercise.equipment}</p>
+          <p className="exercise-card"><span className="exercise-header"><strong>Instructions:</strong></span>
           <ol>
             {exercise.instructions.map((instruction, i) => (
               <li key={i}>{instruction}</li>
             ))}
           </ol>
+          </p>
         </div>
       ))}
     </div>

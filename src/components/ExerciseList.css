@@ -15,6 +15,7 @@ button {
   font-family: "Concert One", cursive;
   border-radius: 5px;
   font-size: 16px;
+  box-shadow: 0 3px #999;
 }
 .giffi {
   margin-left: 15%;
@@ -25,6 +26,12 @@ button:hover {
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(3px) ease-in-out;
+}
+
 .exercise-card {
   border: 1px solid #ddd;
   margin-bottom: 20px;
@@ -33,6 +40,7 @@ button:hover {
 }
 
 .exercise-card h2 {
+  color: var(--ex-list-headers);
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -41,4 +49,8 @@ button:hover {
   max-width: 100%;
   height: auto;
   margin-bottom: 10px;
+}
+
+.exercise-header {
+  color: var(--ex-list-headers);
 }
