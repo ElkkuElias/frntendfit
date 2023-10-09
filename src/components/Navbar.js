@@ -1,61 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
-
 import './Navbar.css';
 
 const Navbar = () => {
-  // const isAuthenticated = sessionStorage.getItem('token') !== null;
-  // const navigate = useNavigate();
-  const { logout } = useLogout()
-  const { user } = useAuthContext()
-
-  const handleClick = () => {
-    logout()
-
-  }
-
-  // const handleLogout = () => {
-  //   // Clear the session storage (or perform any other necessary logout actions)
-  //   sessionStorage.removeItem('token');
-  //   // Redirect to the login page or any other appropriate page
-  //   navigate('/login');
-  // };
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleLogoutClick = () => {
+    logout();
+  };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <header>
+    <header className="navbar">
       <div className="container">
-        <Link to="/">
+        <Link to="/" className="logo">
           <h1>FitnessApp</h1>
         </Link>
-        <nav>
-          <div>
-
-
-
-
-            <Link className="links" to="/Measure">
-              Measure
-            </Link>
-            <Link className="links" to="/History">
-              History
-            </Link>
-            <Link className="links" to="/Explore">
-              Explore
-            </Link>
-            {user && (
-              <>
-                <Link className="links" onClick={handleClick} to="/">Log out</Link>
-              </>
-            )}
-            {!user && (
-              <>
-                <Link className="links" to="/login">Login</Link>
-                <Link className="links" to="/signup">Signup</Link>
-              </>
-            )}
-          </div>
+        <div className="hamburger" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+          <a className='offtop' onClick={toggleMenu}></a>
+          <Link to="/Measure" onClick={toggleMenu}>Measure</Link>
+          <Link to="/History" onClick={toggleMenu}>History</Link>
+          <Link to="/Explore" onClick={toggleMenu}>Explore</Link>
+          {user ? (
+            <Link to="/" onClick={handleLogoutClick}>Log out</Link>
+          ) : (
+            <>
+              <Link to="/login" onClick={toggleMenu}>Login</Link>
+              <Link to="/signup" onClick={toggleMenu}>Signup</Link>
+            </>
+            
+          )}
+          <a className='offbot' onClick={toggleMenu}></a>
         </nav>
       </div>
     </header>
