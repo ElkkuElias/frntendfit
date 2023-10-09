@@ -82,16 +82,16 @@
   }
 }
 .offtop{
-  top: 0%;
+  top:0vh;
   
-  position: absolute;
-  width: 400px;
+  position:absolute;
+  width: 100vh;
   height: 30vh;
 }
 .offbot{
-  bottom: 0%;
+  bottom: 0vh;
   
   position: absolute;
-  width: 400px;
+  width:100vh;
   height: 30vh;
 }
