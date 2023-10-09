@@ -7,7 +7,7 @@ import { REACT_APP_API_URL } from '../utils/apiConfig';
 
 const apiUrl = `https://fitnessappserver.onrender.com/api/workouts`;
 
-const WorkoutForm = () => {
+const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
   const { dispatch } = useWorkoutsContext()
   const { user } = useAuthContext()
 
@@ -86,6 +86,15 @@ const WorkoutForm = () => {
 
       <button>Add Workout</button>
       {error && <div className="error">{error}</div>}
+      <div className="button-container">
+        <button
+          className="history_button"
+          type="button" 
+          onClick={() => setAreFavoritesVisible(!areFavoritesVisible)}
+        >
+          {areFavoritesVisible ? "Hide" : "Show"} Favorites
+        </button>
+      </div>
     </form>
   )
 }

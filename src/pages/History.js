@@ -52,13 +52,9 @@ const History = () => {
           <WorkoutDetails workout={workout} key={workout._id} />
         ))}
       </div>
-      <WorkoutForm />
-      <button 
-        className="history_button" 
-        onClick={() => setAreFavoritesVisible(!areFavoritesVisible)}
-      >
-        {areFavoritesVisible ? "Hide" : "Show"} Favourites
-      </button>
+      <WorkoutForm 
+        setAreFavoritesVisible={setAreFavoritesVisible}
+        areFavoritesVisible={areFavoritesVisible} />
       {areFavoritesVisible && (
         <div className="modal">
           <div className="favourites">
