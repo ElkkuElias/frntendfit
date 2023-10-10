@@ -27,7 +27,6 @@ const Navbar = () => {
           <span></span>
         </div>
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-          <a className='offtop' onClick={toggleMenu}></a>
           <Link to="/Measure" onClick={toggleMenu}>Measure</Link>
           <Link to="/History" onClick={toggleMenu}>History</Link>
           <Link to="/Explore" onClick={toggleMenu}>Explore</Link>
@@ -40,7 +39,6 @@ const Navbar = () => {
             </>
             
           )}
-          <a className='offbot' onClick={toggleMenu}></a>
         </nav>
       </div>
     </header>
