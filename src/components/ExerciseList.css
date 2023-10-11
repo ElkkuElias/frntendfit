@@ -2,8 +2,9 @@
   height: 100vh;
   overflow-y: auto;
   width: 600px;
+  max-width: 40vw;
   position: fixed;
-  right: 300px;
+  right: 1%;
   top: 0;
   padding: 20px;
   background-color: #ffffff;
@@ -54,3 +55,34 @@ button:active {
 .exercise-header {
   color: var(--ex-list-headers);
 }
+@media only screen and (max-width: 1106px) {
+  .exercise-list {
+
+      font-size: 90%;
+  }
+}
+
+  @media only screen and (max-width: 414px) {
+    .exercise-list {
+
+        font-size: 80%;
+    }}
+
+@media only screen and (max-width: 935px) {
+        .exercise-list {
+
+            font-size: 80%;
+        }}
+        @media only screen and (max-width: 760px) {
+          .exercise-list {
+
+              font-size: 80%;
+          }}
+        @media only screen and (max-width: 592px) {
+          #instructions{
+            display: none;
+          }
+          .exercise-list {
+
+              font-size: 80%;
+          }}

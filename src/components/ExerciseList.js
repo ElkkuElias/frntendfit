@@ -50,7 +50,7 @@ const ExerciseList = ({ data }) => {
           <p className="exercise-card">
             <span className="exercise-header"><strong>Equipment: </strong></span>{exercise.equipment}
           </p>
-          <p className="exercise-card">
+          <p className="exercise-card" id='instructions'>
             <span className="exercise-header"><strong>Instructions:</strong></span>
             <ol>
               {exercise.instructions.map((instruction, i) => (

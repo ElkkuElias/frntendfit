@@ -1,6 +1,6 @@
 .square-button {
     width: 500px;
-    height: 500px;
+    height: 300px;
     border: 2px solid #000;
     background-color: #fff;
     font-size: 16px;
@@ -19,6 +19,46 @@
   justify-content: center;
 }
 
+@media (max-width: 700px) {
+  .square-button {
+      max-width: 90%; 
+  }
+
+  .h2 {
+      font-size: 1.2rem; 
+}
+
+@media (max-width: 480px) {
+  .h2 {
+      font-size: 1rem; 
+
+}
+}}
+@media (max-width: 1313px) 
+{.square-button{ width: 450px; 
+}
+
+}
+@media (max-width: 1193px) 
+{.square-button{ width: 377px; 
+}
+
+}
+@media (max-width: 1037px) 
+{.square-button{ width: 300px; 
+}
+
+}
+@media (max-width: 820px) 
+{.square-button{ width: 250px; 
+}
+
+}
+@media (max-width: 691px) 
+{.square-button{ width: 200px; 
+}
+
+}
 
 
-  
+
