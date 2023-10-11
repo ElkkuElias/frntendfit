@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import useExerciseTitle from "../hooks/useExerciseTitle";
 
 // components
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
 //Misc.
-import { REACT_APP_API_URL } from '../utils/apiConfig';
+
 import "./History.css"
 import './star.jpg'
 
@@ -17,6 +18,7 @@ const History = () => {
   const { user } = useAuthContext()
   const [favorites, setFavorites] = useState([])
   const [areFavoritesVisible, setAreFavoritesVisible] = useState(false)
+  const { excerciseTitle, handlexcerciseTitleChange, resetExerciseTitle } = useExerciseTitle("");
 
 
 
@@ -65,7 +67,11 @@ const History = () => {
       </div>
       <WorkoutForm
         setAreFavoritesVisible={setAreFavoritesVisible}
-        areFavoritesVisible={areFavoritesVisible} />
+        areFavoritesVisible={areFavoritesVisible}
+        excerciseTitle={excerciseTitle}
+        handlexcerciseTitleChange={handlexcerciseTitleChange}
+        resetExerciseTitle={resetExerciseTitle}
+      />
       {areFavoritesVisible && (
         <div className="modal">
           <div className="favourites">
@@ -79,14 +85,18 @@ const History = () => {
             <div className="grid">
               {favorites.length > 0 ? (
                 favorites.map((exercise, index) => (
-                  <div key={index} className="grid-item">
+                  <div key={index} className="grid-item"
+                    onClick={() => {
+                      handlexcerciseTitleChange(exercise.name);
+                      setAreFavoritesVisible(false);
+                    }}>
                     <p>{exercise.name}</p>
                     <img src={exercise.gifUrl} alt={exercise.name} />
                     <span
                       className="material-symbols-outlined"
                       onClick={() => handleClick(index)}
                     >
-                      delete
+                      disabled_by_default
                     </span>
                   </div>
                 ))
