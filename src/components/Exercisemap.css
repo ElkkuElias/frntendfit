@@ -4,7 +4,7 @@
 .closing{
   display: flex;
   position: fixed;
-  right: 80%;
+  left: 16%;
 }
 @media only screen and (max-width: 592px) {
 svg{

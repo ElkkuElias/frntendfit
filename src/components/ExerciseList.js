@@ -45,10 +45,10 @@ const ExerciseList = ({ data }) => {
             </button>
           </div>
           <p className="exercise-card">
-            <span className="exercise-header"><strong>Target: </strong></span>{exercise.target}
+            <span className="exercise-header"><strong>Target: </strong><span className="exercise-header-value">{exercise.target}</span></span>
           </p>
           <p className="exercise-card">
-            <span className="exercise-header"><strong>Equipment: </strong></span>{exercise.equipment}
+            <span className="exercise-header"><strong>Equipment: </strong><span className="exercise-header-value">{exercise.equipment}</span></span>
           </p>
           <p className="exercise-card" id='instructions'>
             <span className="exercise-header"><strong>Instructions:</strong></span>

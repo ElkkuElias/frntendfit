@@ -1,0 +1,19 @@
+/* explore page */
+
+.explore-page-title {
+    margin: 10px;
+}
+
+@media only screen and (max-width: 430px) {
+    .explore-page-title {
+        margin: 10px 5px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .explore-page-title {
+        margin: 10px 0;
+        font-size: 13px;
+    }
+  }

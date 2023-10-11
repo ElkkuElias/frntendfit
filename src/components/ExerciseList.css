@@ -9,8 +9,9 @@
   padding: 20px;
   background-color: #ffffff;
 }
+
 button {
-  margin-left: 35%;
+  /* margin-left: 35%; */
   background-color: #ffffff;
   color: #2b2b2b;
   cursor: pointer;
@@ -20,8 +21,12 @@ button {
   font-size: 16px;
   box-shadow: 0 3px #D2D2D2;
 }
-.giffi {
+/* .giffi {
   margin-left: 15%;
+} */
+
+.plusbutton {
+  align-self: center;
 }
 
 button:hover {
@@ -38,12 +43,15 @@ button:active {
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .exercise-card h2 {
   color: var(--ex-list-headers);
   font-size: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .exercise-card img {
@@ -55,34 +63,56 @@ button:active {
 .exercise-header {
   color: var(--ex-list-headers);
 }
+
+.exercise-header-value{
+  color: #000;
+}
+
+
 @media only screen and (max-width: 1106px) {
   .exercise-list {
-
-      font-size: 90%;
+    font-size: 90%;
   }
 }
 
-  @media only screen and (max-width: 414px) {
-    .exercise-list {
-
-        font-size: 80%;
-    }}
-
 @media only screen and (max-width: 935px) {
-        .exercise-list {
+  .exercise-list {
+    font-size: 80%;
+  }
 
-            font-size: 80%;
-        }}
-        @media only screen and (max-width: 760px) {
-          .exercise-list {
+  ol {
+    padding-left: 15px;
+  }
+}
 
-              font-size: 80%;
-          }}
-        @media only screen and (max-width: 592px) {
-          #instructions{
-            display: none;
-          }
-          .exercise-list {
+@media only screen and (max-width: 760px) {
+  .exercise-list {
+    font-size: 80%;
+  }
 
-              font-size: 80%;
-          }}
+  .exercise-header {
+    text-align: center;
+  }
+
+
+}
+
+@media only screen and (max-width: 592px) {
+  #instructions {
+    display: none;
+  }
+  .exercise-list {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .exercise-list {
+    font-size: 80%;
+  }
+
+  .exercise-card h2 {
+    font-size: 14px;
+  }
+
+}
