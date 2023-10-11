@@ -3,21 +3,24 @@
 import { useState } from 'react'
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from '../hooks/useAuthContext';
-import { REACT_APP_API_URL } from '../utils/apiConfig';
+
 
 const apiUrl = `https://fitnessappserver.onrender.com/api/workouts`;
 
-const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
+const WorkoutForm = (props) => {
+  const {
+    excerciseTitle,
+    handlexcerciseTitleChange,
+    resetExerciseTitle,
+    setAreFavoritesVisible,
+    areFavoritesVisible,
+  } = props;
   const { dispatch } = useWorkoutsContext()
   const { user } = useAuthContext()
-
-  const [title, setTitle] = useState('')
   const [load, setLoad] = useState('')
   const [reps, setReps] = useState('')
   const [error, setError] = useState(null)
-  //const [emptyFields, setEmptyFields] = useState([])
 
-  // const REACT_APP_API_URL='http://localhost:3001';
 
 
   const handleSubmit = async (e) => {
@@ -28,14 +31,14 @@ const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
       return
     }
 
-    const workout = { title, load, reps }
+    const workout = { title: excerciseTitle, load, reps };
 
     const response = await fetch(apiUrl, {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {
         'Content-Type': 'application/json',
-         'Authorization' : `Bearer ${user.token}`
+        'Authorization': `Bearer ${user.token}`
       }
     })
     const newWorkout = await response.json()
@@ -46,7 +49,7 @@ const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
     }
     if (response.ok) {
       setError(null)
-      setTitle('')
+      resetExerciseTitle()
       setLoad('')
       setReps('')
       //setEmptyFields([])
@@ -63,9 +66,9 @@ const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
       <label>Excersize Title:</label>
       <input
         type="text"
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        //className = {emptyFields.includes('title') ? 'error' : ''}
+        onChange={(e) => handlexcerciseTitleChange(e.target.value)}
+        value={excerciseTitle}
+      //className = {emptyFields.includes('title') ? 'error' : ''}
       />
 
       <label>Load (in kg):</label>
@@ -73,7 +76,7 @@ const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
         type="number"
         onChange={(e) => setLoad(e.target.value)}
         value={load}
-        //className = {emptyFields.includes('load') ? 'error' : ''}
+      //className = {emptyFields.includes('load') ? 'error' : ''}
       />
 
       <label>Number of Reps:</label>
@@ -81,7 +84,7 @@ const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
         type="number"
         onChange={(e) => setReps(e.target.value)}
         value={reps}
-        //className = {emptyFields.includes('reps') ? 'error' : ''}
+      //className = {emptyFields.includes('reps') ? 'error' : ''}
       />
 
       <button>Add Workout</button>
@@ -89,7 +92,7 @@ const WorkoutForm = ({ setAreFavoritesVisible, areFavoritesVisible  }) => {
       <div className="button-container">
         <button
           className="history_button"
-          type="button" 
+          type="button"
           onClick={() => setAreFavoritesVisible(!areFavoritesVisible)}
         >
           Show Favourites
