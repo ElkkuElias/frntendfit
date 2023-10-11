@@ -44,7 +44,7 @@ function CalorieCalculator() {
     };
 
   return (
-    <div>
+    <div id="calorie-calculator">
       <h1>Calorie Calculator</h1>
         <p>
         The Calorie Estimation Tool helps you determine your daily calorie requirements. 
